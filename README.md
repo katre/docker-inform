@@ -7,31 +7,19 @@ I wanted to get back into writing [Inform 7](http://inform7.com) games, but was 
 Using the image
 ===============
 
-TODO: Add directions once the image is on Dockerhub or something.
+The docker image is on [DockerHub](https://cloud.docker.com/repository/docker/katre/docker-inform).
 
-TODO: Set up directories.
-
-Once the image is fetched, run the following:
+To run Inform7, use the `inform7.sh` shell script:
 ```
-docker run \
-  -it \
-  --rm \
-  --env DISPLAY=${DISPLAY} \
-  --volume /tmp/.X11-unix:/tmp/.X11-unix \
-  inform7
+$ ./inform7.sh
 ```
 
-The `DISPLAY` and `/tmp/.X11-unix` bits allow Docker to use your current X Windows session. The `--volume` bit makes sure your files are stored on your actual local system.
+This script creates a directory to store save files in at `$HOME/Inform7`. Any files you access (story files or extensions) must be in this directory, or they will not be visible to Inform7 in the Docker image.
+
+TODO: Currently, Inform7 settings cannot be modified. Looks like some helper program is missing.
 
 Building the image
 ==================
 
-To rebuild the image, run the following:
-
-```
-wget http://inform7.com/apps/6M62/gnome-inform7_6M62-0ubuntu1_amd64.deb
-docker build -t inform7 .
-```
-
-TODO: Push to dockerhub?
+The image rebuilds automatically on DockerHub when this repository is updated.
 
