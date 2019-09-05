@@ -17,7 +17,6 @@ RUN apt-get install -y \
   dconf-gsettings-backend
 RUN curl http://inform7.com/apps/6M62/gnome-inform7_6M62-0ubuntu1_amd64.deb \
   --output /tmp/gnome-inform7.deb
-#ADD gnome-inform7_6M62-0ubuntu1_amd64.deb /tmp/gnome-inform7_6M62-0ubuntu1_amd64.deb
 RUN dpkg --install /tmp/gnome-inform7.deb
 
 RUN useradd -ms /bin/bash informer
