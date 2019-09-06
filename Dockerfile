@@ -1,8 +1,7 @@
 FROM ubuntu:xenial
 
 # Install needed software.
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
   curl \
   libcairo2 \
   libgdk-pixbuf2.0-0 \
@@ -23,6 +22,6 @@ RUN useradd -ms /bin/bash informer
 USER informer
 WORKDIR /home/informer
 
-RUN mkdir Inform7
+RUN mkdir Inform
 
 CMD gnome-inform7
