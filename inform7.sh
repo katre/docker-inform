@@ -18,5 +18,6 @@ exec docker run \
   --rm \
   --env DISPLAY=${DISPLAY} \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
-  --volume "${SAVE_DIRECTORY}:/home/informer/Inform7" \
-  katre/docker-inform 2>&1 >/dev/null
+  --volume "${SAVE_DIRECTORY}:/home/informer/Inform:rw" \
+  --user $(id -u):$(id -g) \
+  katre/docker-inform
