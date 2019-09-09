@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
   libgtkspell0 \
   libjavascriptcoregtk-1.0-0 \
   libwebkitgtk-1.0-0 \
-  dconf-gsettings-backend
+  dconf-gsettings-backend \
+  dbus-x11
 RUN curl http://inform7.com/apps/6M62/gnome-inform7_6M62-0ubuntu1_amd64.deb \
   --output /tmp/gnome-inform7.deb
 RUN dpkg --install /tmp/gnome-inform7.deb
